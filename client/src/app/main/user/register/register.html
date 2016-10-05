@@ -7,17 +7,17 @@
 
             <div class="title" translate="REGISTER.TITLE">Create an account</div>
 
-            <form name="registerForm" novalidate>
-                <md-input-container class="md-block" md-no-float>
+            <form name="registerForm" action="/register" novalidate>
+                <!-- <md-input-container class="md-block" md-no-float>
                     <input name="username" ng-model="vm.form.username" placeholder="Name"
-                           
+
                            required>
                     <div ng-messages="registerForm.username.$error" role="alert">
                         <div ng-message="required">
                             <span >Username field is required</span>
                         </div>
                     </div>
-                </md-input-container>
+                </md-input-container> -->
 
                 <md-input-container class="md-block" md-no-float>
                     <input type="email" name="email" ng-model="vm.form.email" placeholder="Email"
@@ -42,7 +42,7 @@
                     </div>
                 </md-input-container>
 
-                <md-input-container class="md-block" md-no-float>
+                <!-- <md-input-container class="md-block" md-no-float>
                     <input type="password" name="passwordConfirm" ng-model="vm.form.passwordConfirm"
                            placeholder="Password (Confirm)" required>
                     <div ng-messages="registerForm.passwordConfirm.$error" role="alert">
@@ -50,7 +50,7 @@
                             <span>Password (Confirm) field is required</span>
                         </div>
                     </div>
-                </md-input-container>
+                </md-input-container> -->
 
                 <div class="terms" layout="row" layout-align="center center">
                     <md-checkbox name="terms" ng-model="data.cb1" aria-label="I read and accept" required></md-checkbox>

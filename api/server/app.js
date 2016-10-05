@@ -13,8 +13,7 @@ var bodyParser = require('body-parser');
 // var newname;
 // var newRecord = {};
 
-
-
+require('./config/passport')(passport);
 
 
 app.use(function(req, res, next) { //allow cross origin requests
@@ -82,9 +81,18 @@ app.use(bodyParser.json());
 //
 // });
 
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
+
 app.use('/upload', require('./controllers/cvupload.controller'));
 
 app.use('/companylist',require('./controllers/companylist.controller'));
+
+require('./controllers/userauth.controller')(app, passport);
 
 
 // //Todo
