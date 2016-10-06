@@ -1,9 +1,11 @@
 var express = require('express');
 var request = require('request');
+var mongo = require('mongoose');
 
+var configDB = require('../config/db.js');
 
-var mongo = require('mongoskin');
-var db = mongo.db("mongodb://localhost:27017/mycvapp", { native_parser: true });
+mongo.connect(configDB.url);
+//var db = mongo.db("mongodb://localhost:27017/mycvapp", { native_parser: true });
 
 
 module.exports = function(app, passport) {

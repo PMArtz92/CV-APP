@@ -7,4 +7,4 @@ client/.tmp/
 client/dist/
 
 
-api/node_modules/
+api/server/node_modules/

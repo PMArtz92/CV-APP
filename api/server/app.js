@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var passport = require('passport');
+var flash    = require('connect-flash');
 // var multer = require('multer');
 // var util = require('util'),
 //     inspect = require('util').inspect;
@@ -27,6 +29,7 @@ app.use(function(req, res, next) { //allow cross origin requests
 No cors required */
 app.use(express.static('../client'));
 app.use(bodyParser.json());
+
 
 // var storage = multer.diskStorage({ //multers disk storage settings
 //     destination: function (req, file, cb) {
@@ -80,12 +83,6 @@ app.use(bodyParser.json());
 //
 //
 // });
-
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
-app.use(passport.initialize());
-app.use(passport.session());
-
-
 
 
 app.use('/upload', require('./controllers/cvupload.controller'));
