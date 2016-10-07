@@ -10,13 +10,13 @@ mongo.connect(configDB.url);
 
 module.exports = function(app, passport) {
 
-  app.post('/login', passport.authenticate('local-login', {
-  successRedirect : '/profile', // redirect to the secure profile section
+  app.post('/userlogin', passport.authenticate('local-login', {
+  successRedirect : '/cvs', // redirect to the secure profile section
   failureRedirect : '/login', // redirect back to the signup page if there is an error
   failureFlash : true // allow flash messages
 }));
 
-app.post('/register', passport.authenticate('local-signup', {
+app.post('/userregister', passport.authenticate('local-signup', {
       successRedirect : '/login', // redirect to the secure profile section
       failureRedirect : '/register', // redirect back to the signup page if there is an error
       failureFlash : true // allow flash messages
