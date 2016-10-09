@@ -9,7 +9,7 @@
     /** @ngInject */
     function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
     {
-        var test = 1;
+        var test = 0;
 		// State
         $stateProvider
             .state('app.cvupload', {

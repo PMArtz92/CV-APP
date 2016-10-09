@@ -11,7 +11,7 @@ require('./config/passport')(passport);
 
 app.use(function(req, res, next) {
     res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
-    res.header("Access-Control-Allow-Origin", "http://localhost");
+    res.header("Access-Control-Allow-Origin", "http://localhost:3001");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });

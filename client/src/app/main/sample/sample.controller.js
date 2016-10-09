@@ -7,15 +7,15 @@
         .controller('SampleController', SampleController);
 
     /** @ngInject */
-    function SampleController(SampleData)
+    function SampleController(SampleData,$scope,$http)
     {
-        var vm = this;
+              // Data
+        $scope.helloText = SampleData.data.helloText;
 
-        // Data
-        vm.helloText = SampleData.data.helloText;
+        $http.get('http://localhost:3000/currentuser').then(function(result){
+          $scope.currentU = result;
+          console.log($scope.currentU);
+        });
 
-        // Methods
-
-        //////////
     }
 })();
