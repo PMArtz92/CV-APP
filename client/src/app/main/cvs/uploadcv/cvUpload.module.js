@@ -9,7 +9,8 @@
     /** @ngInject */
     function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
     {
-        // State
+        var test = 1;
+		// State
         $stateProvider
             .state('app.cvupload', {
                 url    : '/cvupload',
@@ -36,6 +37,10 @@
             title    : 'Upload CV',
             icon     : 'icon-tile-four',
             state    : 'app.cvupload',
+			hidden: function ()
+       {
+           return test; // must be a boolean value
+       },
             /*stateParams: {
                 'param1': 'page'
              },*/
