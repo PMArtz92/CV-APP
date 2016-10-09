@@ -7,11 +7,7 @@ var session      = require('express-session');
 var cookieParser = require('cookie-parser');
 var path = require('path');
 
-
 require('./config/passport')(passport);
-
-
-
 
 app.use(function(req, res, next) {
     res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
@@ -20,9 +16,31 @@ app.use(function(req, res, next) {
     next();
 });
 
+<<<<<<< HEAD
 
+=======
+app.use(bodyParser());
+app.use(bodyParser.json());
 
+// read cookies (needed for auth)
+app.use(cookieParser());
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+// passport js related
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash());
 
+app.use('/upload', require('./controllers/cvupload.controller'));
+app.use('/companylist', require('./controllers/companylist.controller'));
+//get cv list for givin company
+app.use('/getCvList', require('./controllers/companycvlist.controller'));
+// get the givin cv and update the givin cv
+app.use('/manageCv', require('./controllers/manageCV.controller'));
+>>>>>>> 19bd9d0c543012f5855164d07fcfcc8d43cc1cac
+
+app.get('/register2', function(req, res) {
+    res.send({ message: req.flash('signupMessage')});
+});
 
 // passport js related
 app.use(cookieParser());
@@ -31,13 +49,13 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash());
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 19bd9d0c543012f5855164d07fcfcc8d43cc1cac
 
- // read cookies (needed for auth)
-app.use(bodyParser());
 app.use(express.static('../client/dist'));
-app.use(bodyParser.json());
 // Use res.sendfile, as it streams instead of reading the file into memory.
 app.use(function(req, res) {
     res.sendfile(path.resolve('../client/dist/index.html'));
