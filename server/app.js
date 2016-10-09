@@ -16,9 +16,6 @@ app.use(function(req, res, next) {
     next();
 });
 
-<<<<<<< HEAD
-
-=======
 app.use(bodyParser());
 app.use(bodyParser.json());
 
@@ -36,7 +33,6 @@ app.use('/companylist', require('./controllers/companylist.controller'));
 app.use('/getCvList', require('./controllers/companycvlist.controller'));
 // get the givin cv and update the givin cv
 app.use('/manageCv', require('./controllers/manageCV.controller'));
->>>>>>> 19bd9d0c543012f5855164d07fcfcc8d43cc1cac
 
 app.get('/register2', function(req, res) {
     res.send({ message: req.flash('signupMessage')});
@@ -49,11 +45,6 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash());
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 19bd9d0c543012f5855164d07fcfcc8d43cc1cac
 
 app.use(express.static('../client/dist'));
 // Use res.sendfile, as it streams instead of reading the file into memory.
