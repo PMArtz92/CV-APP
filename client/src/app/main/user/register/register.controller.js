@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.pages.register',[])
+        .module('app.pages.register')
         .controller('RegisterController', RegisterController);
 
     /** @ngInject */
