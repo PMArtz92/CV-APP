@@ -10,7 +10,6 @@
 
             // Core
             'app.core',
-
             // Navigation
             'app.navigation',
 
@@ -23,7 +22,7 @@
             // pages
             'app.pages',
 
-            'app.authService'
+
 
         ]);
 })();

@@ -11,7 +11,7 @@ mongo.connect(configDB.url);
 module.exports = function(app, passport) {
 
     app.post('/userlogin', passport.authenticate('local-login', {
-        successRedirect: '/cvs', // redirect to the secure profile section
+        successRedirect: '/cvupload', // redirect to the secure profile section
         failureRedirect: '/login', // redirect back to the signup page if there is an error
         failureFlash: true // allow flash messages
     }));
