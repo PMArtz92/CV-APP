@@ -11,6 +11,8 @@
             'app.pages.cvView',
             'app.pages.login',
             'app.pages.register',
-            'app.sample'
+            'app.sample',
+            'app.authService',
+            'app.test'
         ]);
 })();

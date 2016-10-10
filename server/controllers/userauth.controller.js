@@ -30,15 +30,10 @@ module.exports = function(app, passport) {
 
     app.get('/currentuser', function(req,res){
 
-      //var users1 = res.json(req.user);
+      res.json(req.user);
       //console.log(user.local.usertype);
       //console.log('users1');
       //return users1.local.usertype;
-      var uu = {
-_id: "57fa880365fc05505867a1c0",
-__v: 0
-};
-   return uu;
     });
 
 

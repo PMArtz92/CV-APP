@@ -3,13 +3,13 @@
     'use strict';
 
     angular
-        .module('app.pages.cvUpload')
+        .module('app.pages.cvUpload',[])
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider,AuthenticationService)
     {
-        var test = 0;
+
 		// State
         $stateProvider
             .state('app.cvupload', {
@@ -39,7 +39,7 @@
             state    : 'app.cvupload',
 			hidden: function ()
        {
-           return test; // must be a boolean value
+           return AuthenticationService.userNow(); // must be a boolean value
        },
             /*stateParams: {
                 'param1': 'page'
