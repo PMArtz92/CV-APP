@@ -1,15 +1,25 @@
 <div class="template-5 p-16" layout="row" layout-align="space-between start">
     <div class="info">
         <div class="title secondary-text">
-            {{card.name}}
+            {{card.fname}}{{card.lname}}
         </div>
-
-        <div class="event h2">
+        <div class="event h3">
             {{card.email}}
+        </div>
+        <div class="event h3">
+            {{card.mobilenumber}}
         </div>
     </div>
 
     <div class="media ml-16">
-        <img class="image" ng-src="{{card.img}}" alt="" ng-show="card.img">
+        <img class="image" ng-src="assets/images/avatars/profile.jpg" alt="" ng-show="card.img">
     </div>
+    <span> 
+	<a href="viewcv?path={{card.cvpath}}" class="md-default-theme md-button md-raised md-accent">
+		<md-icon ng-if="shortcut.icon" md-font-icon="icon-tile-four" class="icon s24 md-default-theme md-font material-icons icon-eye" aria-hidden="true"></md-icon>
+	</a>
+	<a href="/{{card.cvpath}}" target="_blank" download={{card.name}}>
+		<md-icon ng-if="shortcut.icon" md-font-icon="icon-tile-four" class="icon s24 md-default-theme md-font material-icons icon-download" aria-hidden="true"></md-icon>
+	</a>
+    </span>
 </div>
